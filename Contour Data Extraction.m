@@ -48,7 +48,7 @@ for iall=1:len_all
     A3(:,:,3)=ff;
     thresh = graythresh(A3);
     BW= im2bw(A3,thresh);
-    
+
     IBW = ~BW;
     P = max(cell2mat(struct2cell(regionprops(~BW,'area'))));
     BW2 = bwareaopen(IBW,round(P/3),8);
@@ -84,7 +84,7 @@ for iall=1:len_all
     
     
     %% angle bisector
-    Convex_hull%Convex hull algorithm
+    Convex_hull %Convex hull algorithm
     k1=(plot2(1,2)-plot1(1,2))/(plot2(1,1)-plot1(1,1));
     b1=(-1)*k1*plot1(1,1)+plot1(1,2);
     k2=(plot4(1,2)-plot3(1,2))/(plot4(1,1)-plot3(1,1));
@@ -164,8 +164,7 @@ for iall=1:len_all
     XrotateplotC =  (XplotC-XcplotC)*cosd(angplotC) + (YplotC-YcplotC)*sind(angplotC) + XcplotC;
     YrotateplotC = -(XplotC-XcplotC)*sind(angplotC) + (YplotC-YcplotC)*cosd(angplotC) + YcplotC;
     plotCrotate = [XrotateplotC,YrotateplotC];
-    
-    %% Method for determining the top lowest/highest white pixels
+
     rotateAroundd = ~rotateAroundd;
     filename1=[file_name_all_change,'a.jpg'];;
     imwrite(rotateAroundd,['F:\XXX\',filename1]);
